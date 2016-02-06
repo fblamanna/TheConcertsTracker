@@ -5,12 +5,12 @@ This Python script returns a .csv file with all information about the concerts f
 
 ## Input
 
-The algorithm takes as input the artist name (just for naming the output file) and the Musicbrainz MBID (https://musicbrainz.org/doc/MusicBrainz_Database) code, which is an identifiable code for each artist or band in the database. I'm now working on an automatic call artist name - code. In the meantime you have to manually add the code available on the Musicbrainz website.
+The algorithm takes as input the artist name (just for naming the output file) and the [Musicbrainz MBID](https://musicbrainz.org/doc/MusicBrainz_Database) code, which is an identifiable code for each artist or band in the database. I'm now working on an automatic call artist name - code. In the meantime you have to manually add the code available on the Musicbrainz website.
 
 ## Parameters
-artistname = name of the artist or band (in quotation marks)
 
-artistcode = Musicbrainz MBID (in quotation marks)
+artistname = name of the artist or band (in quotation marks)  
+artistcode = Musicbrainz MBID (in quotation marks)  
  
 ## Output
 
@@ -33,9 +33,8 @@ The algorithm returns a csv file with column names, **the value separator is a s
 
 ## Execution
 
-You can run the code using the command:
-
-*python ConcertsTimeline.py 'artistcode' 'artistname'*
+You can run the code using the command:  
+*python ConcertsTimeline.py 'artistcode' 'artistname'*  
 
 ## Citation
 
@@ -45,8 +44,7 @@ You can run the code using the command:
 Don't hesitate to contact me at [fabio@fabiolamanna.it](mailto:fabio@fabiolamanna.it)
 
 ##
-This code is released under the MIT License (MIT)
-
+This code is released under the MIT License (MIT)  
 Copyright (c) 2016 Fabio Lamanna
 
 
