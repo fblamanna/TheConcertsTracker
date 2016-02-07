@@ -53,7 +53,7 @@ bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,5
 ## References
 
 ## Questions / Issues
-Don't hesitate to contact me at [fabio@fabiolamanna.it](mailto:fabio@fabiolamanna.it)
+Contacts and Info: [www.fabiolamanna.it](http://www.fabiolamanna.it)
 
 ##
 This code is released under the MIT License (MIT)  
