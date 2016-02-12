@@ -86,43 +86,38 @@ def main():
 
 			for i in range(len(data['setlists']['setlist'])):
 
-				try:
-
-					writer.writerow(
-					                (
-					                # Event ID
-					                str(data["setlists"]["setlist"][i]["@id"]),
-					                # Artist
-					                str(data['setlists']['setlist'][i]["artist"]["@name"]),
-					                # Eventdate
-					                str(data["setlists"]["setlist"][i]["@eventDate"]),
-					                # TourName
-					                unicode(data["setlists"]["setlist"][i]["@tour"]).encode('utf-8'),
-					                # Venue
-					                unicode(data["setlists"]["setlist"][i]["venue"]["@name"]).encode('utf-8'),
-					                # Venue ID
-					                str(data["setlists"]["setlist"][i]["venue"]["@id"]),
-					                # City
-					                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["@name"]).encode('utf-8'),
-					                # City ID
-					                str(data["setlists"]["setlist"][i]["venue"]["city"]["@id"]),
-					                # City Latitude
-					                float(data["setlists"]["setlist"][i]["venue"]["city"]["coords"]["@lat"]),
-					                # City Longitude
-					                float(data["setlists"]["setlist"][i]["venue"]["city"]["coords"]["@long"]),
-					                # State
-					                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["@state"]).encode('utf-8'),
-					                # State Code
-					                str(data["setlists"]["setlist"][i]["venue"]["city"]["@stateCode"]),
-					                # Country
-					                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["country"]["@name"]).encode('utf-8'),
-					                # Country Code
-					                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["country"]["@code"]).encode('utf-8')
-					                )
-					                )
-
-				except:
-					pass
+				writer.writerow(
+				                (
+				                # Event ID
+				                str(data["setlists"]["setlist"][i]["@id"]),
+				                # Artist
+				                str(data['setlists']['setlist'][i]["artist"]["@name"]),
+				                # Eventdate
+				                str(data["setlists"]["setlist"][i]["@eventDate"]),
+				                # TourName
+				                unicode(data["setlists"]["setlist"][i].get("@tour")).encode('utf-8'),
+				                # Venue
+				                unicode(data["setlists"]["setlist"][i]["venue"].get("@name")).encode('utf-8'),
+				                # Venue ID
+				                str(data["setlists"]["setlist"][i]["venue"].get("@id")),
+				                # City
+				                unicode(data["setlists"]["setlist"][i]["venue"]["city"].get("@name")).encode('utf-8'),
+				                # City ID
+				                str(data["setlists"]["setlist"][i]["venue"]["city"].get("@id")),
+				                # City Latitude
+				                float(data["setlists"]["setlist"][i]["venue"]["city"]["coords"].get("@lat")),
+				                # City Longitude
+				                float(data["setlists"]["setlist"][i]["venue"]["city"]["coords"].get("@long")),
+				                # State
+				                unicode(data["setlists"]["setlist"][i]["venue"]["city"].get("@state")).encode('utf-8'),
+				                # State Code
+				                str(data["setlists"]["setlist"][i]["venue"]["city"].get("@stateCode")),
+				                # Country
+				                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["country"].get("@name")).encode('utf-8'),
+				                # Country Code
+				                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["country"].get("@code")).encode('utf-8')
+				                )
+				                )
 
 	f.close()
 
