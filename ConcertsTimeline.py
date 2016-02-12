@@ -48,7 +48,7 @@ def main():
 	# Write .csv headers
 	writer.writerow( 
 	                (
-	                'ID',
+	                'eventID',
 	                'artist',
 	                'eventdate',
 	                'tourname',
