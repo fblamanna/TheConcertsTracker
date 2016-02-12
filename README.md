@@ -30,6 +30,8 @@ The algorithm returns a csv file with column names, **the value separator is a s
 13. **country** Country name
 14. **country_id** ID of the country
 
+If a field information is missing, the code returns None for that value.
+
 ## Execution
 
 You can run the code using the command:  
