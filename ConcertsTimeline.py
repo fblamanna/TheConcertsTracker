@@ -19,6 +19,14 @@
 
 __author__ = """ Fabio Lamanna (fabio@fabiolamanna.it) """
 
+# Version 0.1
+# Initial version
+
+# Version 0.2
+# 27/12/16
+# Changelog:
+# 1. Fix bug with ulrlib2 when loading .json file
+
 # Import Modules
 try:
 	import ujson as json
@@ -77,12 +85,11 @@ def main():
 
 	for page in range(1,pages):
 
-		data = urllib2.urlopen('http://api.setlist.fm/rest/0.1/artist/' + artistcode + '/setlists.json?p=' + str(page))
+		Data = urllib2.urlopen('http://api.setlist.fm/rest/0.1/artist/' + artistcode + '/setlists.json?p=' + str(page))
+		d = json.load(Data)
 
 		# Read .json file line per line
-		for line in data:
-
-			data = json.loads(line)
+		for line in d:
 
 			for i in range(len(data['setlists']['setlist'])):
 
