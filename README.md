@@ -52,6 +52,7 @@ bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,5
 
 ## Version History
 22.07.2016 - Version 0.1
+
 27.12.2016 - Version 0.2 - Fixing bugs while reading .json
 
 ## Questions / Issues
