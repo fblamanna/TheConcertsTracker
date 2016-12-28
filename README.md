@@ -4,7 +4,7 @@ This Python script returns a .csv file with all information about the concerts f
 
 ## Input
 
-The algorithm takes as input the artist name (just for naming the output file) and the [Musicbrainz MBID](https://musicbrainz.org/doc/MusicBrainz_Database) code, which is an identifiable code for each artist or band in the database. I'm now working on an automatic call artist name - code. In the meantime you have to manually add the code available on the Musicbrainz website.
+The script takes as input the artist name (just for naming the output file) and the [Musicbrainz MBID](https://musicbrainz.org/doc/MusicBrainz_Database) code, which is an identifiable code for each artist or band in the database. I'm now working on an automatic call artist name - code. In the meantime you have to manually add the code available on the Musicbrainz website.
 
 ## Parameters
 
@@ -50,9 +50,9 @@ bd2d1e2,David Bowie,20-06-2004,A Reality Tour,Törnävä,2bd6d4ba,Seinäjoki,642
 bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,52.373,4.9,North Holland,07,Netherlands,NL
 ```
 
-## Citation
-
-## References
+## Version History
+22.07.2016 - Version 0.1
+27.12.2016 - Version 0.2 - Fixing bugs while reading .json
 
 ## Questions / Issues
 Contacts and Info: [www.fabiolamanna.it](http://www.fabiolamanna.it)
