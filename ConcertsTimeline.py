@@ -91,38 +91,38 @@ def main():
 		# Read .json file line per line
 		for line in d:
 
-			for i in range(len(data['setlists']['setlist'])):
+			for i in range(len(d['setlists']['setlist'])):
 
 				writer.writerow(
 				                (
 				                # Event ID
-				                str(data["setlists"]["setlist"][i]["@id"]),
+				                str(d["setlists"]["setlist"][i]["@id"]),
 				                # Artist
-				                str(data['setlists']['setlist'][i]["artist"]["@name"]),
+				                str(d['setlists']['setlist'][i]["artist"]["@name"]),
 				                # Eventdate
-				                str(data["setlists"]["setlist"][i]["@eventDate"]),
+				                str(d["setlists"]["setlist"][i]["@eventDate"]),
 				                # TourName
-				                unicode(data["setlists"]["setlist"][i].get("@tour")).encode('utf-8'),
+				                unicode(d["setlists"]["setlist"][i].get("@tour")).encode('utf-8'),
 				                # Venue
-				                unicode(data["setlists"]["setlist"][i]["venue"].get("@name")).encode('utf-8'),
+				                unicode(d["setlists"]["setlist"][i]["venue"].get("@name")).encode('utf-8'),
 				                # Venue ID
-				                str(data["setlists"]["setlist"][i]["venue"].get("@id")),
+				                str(d["setlists"]["setlist"][i]["venue"].get("@id")),
 				                # City
-				                unicode(data["setlists"]["setlist"][i]["venue"]["city"].get("@name")).encode('utf-8'),
+				                unicode(d["setlists"]["setlist"][i]["venue"]["city"].get("@name")).encode('utf-8'),
 				                # City ID
-				                str(data["setlists"]["setlist"][i]["venue"]["city"].get("@id")),
+				                str(d["setlists"]["setlist"][i]["venue"]["city"].get("@id")),
 				                # City Latitude
-				                float(data["setlists"]["setlist"][i]["venue"]["city"]["coords"].get("@lat")),
+				                float(d["setlists"]["setlist"][i]["venue"]["city"]["coords"].get("@lat")),
 				                # City Longitude
-				                float(data["setlists"]["setlist"][i]["venue"]["city"]["coords"].get("@long")),
+				                float(d["setlists"]["setlist"][i]["venue"]["city"]["coords"].get("@long")),
 				                # State
-				                unicode(data["setlists"]["setlist"][i]["venue"]["city"].get("@state")).encode('utf-8'),
+				                unicode(d["setlists"]["setlist"][i]["venue"]["city"].get("@state")).encode('utf-8'),
 				                # State Code
-				                str(data["setlists"]["setlist"][i]["venue"]["city"].get("@stateCode")),
+				                str(d["setlists"]["setlist"][i]["venue"]["city"].get("@stateCode")),
 				                # Country
-				                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["country"].get("@name")).encode('utf-8'),
+				                unicode(d["setlists"]["setlist"][i]["venue"]["city"]["country"].get("@name")).encode('utf-8'),
 				                # Country Code
-				                unicode(data["setlists"]["setlist"][i]["venue"]["city"]["country"].get("@code")).encode('utf-8')
+				                unicode(d["setlists"]["setlist"][i]["venue"]["city"]["country"].get("@code")).encode('utf-8')
 				                )
 				                )
 
