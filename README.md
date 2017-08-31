@@ -9,7 +9,7 @@ The script takes as input the artist name (just for naming the output file) and 
 
 #### Input Parameters:
 artistname: name of the artist or band (string)  
-artistcode: Musicbrainz MBID (string)
+artistcode: Musicbrainz MBID (string)  
 API_KEY: Setlist.fm valid API Key
  
 ## Output
@@ -52,8 +52,8 @@ bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,5
 ```
 
 ## Version History
-22.07.2016 - Version 0.1
-27.12.2016 - Version 0.2 - Fixing bugs while reading .json
+22.07.2016 - Version 0.1  
+27.12.2016 - Version 0.2 - Fixing bugs while reading .json  
 31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
 
 ## Questions / Issues
