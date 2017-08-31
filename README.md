@@ -1,4 +1,5 @@
-# Get concerts information for artists and bands from setlist.fm database
+# The Concerts Tracker
+## Get concerts information from setlist.fm database
 
 This Python script returns a .csv file with all information about the concerts for a single band or artist, available on the [setlist.fm](http://www.setlist.fm/) website. You need to apply for a **setlist.fm API key** to download data and use them; they are free for non-commercial projects. You can get it [here](http://api.setlist.fm/docs/index.html). Please read the [API Terms of Use](http://www.setlist.fm/help/terms) carefully.
 
@@ -35,10 +36,10 @@ If a field information is missing, the code returns None for that value.
 ## Execution
 
 You can run the code using the command:  
-*python ConcertsTimeline.py 'artistcode' 'artistname'*  
+*python TheConcertsTracker.py 'artistcode' 'artistname'*  
 
 ## Sample Output
-```python ConcertsTimeline.py '5441c29d-3602-4898-b1a1-b77fa23b8e50' 'David Bowie'```
+```python TheConcertsTracker.py '5441c29d-3602-4898-b1a1-b77fa23b8e50' 'David Bowie'```
 
 ```
 ID,artist,eventdate,tourname,venue,venue_id,city,city_id,city_lat,city_lon,state,state_id,country,country_id
@@ -52,13 +53,13 @@ bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,5
 
 ## Version History
 22.07.2016 - Version 0.1
-
 27.12.2016 - Version 0.2 - Fixing bugs while reading .json
+31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
 
 ## Questions / Issues
 Contacts and Info: [www.fabiolamanna.it](http://www.fabiolamanna.it)
 
 ##
-Copyright (c) 2016 Fabio Lamanna. Code under License GPLv3.
+Copyright (c) 2017 Fabio Lamanna. Code under License GPLv3.
 
 
