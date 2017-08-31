@@ -94,7 +94,7 @@ def main():
 	# Total Number of Pages needed to load
 	pages = int(totalshows/20)
 
-	for page in range(1,2):
+	for page in range(1,pages):
 
 		url = 'https://api.setlist.fm/rest/1.0/artist/' + sys.argv[1] + '/setlists?p=1'
 		headers = {'Accept': 'application/json', 'x-api-key': sys.argv[3]}
