@@ -7,10 +7,10 @@ This Python script returns a .csv file with all information about the concerts f
 
 The script takes as input the artist name (just for naming the output file) and the [Musicbrainz MBID](https://musicbrainz.org/doc/MusicBrainz_Database) code, which is an identifiable code for each artist or band in the database. I'm now working on an automatic call artist name - code. In the meantime you have to manually add the code available on the Musicbrainz website.
 
-#### Parameters
-
-artistname = name of the artist or band (in quotation marks)  
-artistcode = Musicbrainz MBID (in quotation marks)  
+#### Input Parameters:
+artistname: name of the artist or band (string)  
+artistcode: Musicbrainz MBID (string)
+API_KEY: Setlist.fm valid API Key
  
 ## Output
 
@@ -36,10 +36,10 @@ If a field information is missing, the code returns None for that value.
 ## Execution
 
 You can run the code using the command:  
-*python TheConcertsTracker.py 'artistcode' 'artistname'*  
+*$ python TheConcertsTracker.py 'artistcode' 'artistname' 'API_KEY'
 
 ## Sample Output
-```python TheConcertsTracker.py '5441c29d-3602-4898-b1a1-b77fa23b8e50' 'David Bowie'```
+```python TheConcertsTracker.py '5441c29d-3602-4898-b1a1-b77fa23b8e50' 'David Bowie' 'API_KEY'```
 
 ```
 ID,artist,eventdate,tourname,venue,venue_id,city,city_id,city_lat,city_lon,state,state_id,country,country_id
@@ -53,9 +53,7 @@ bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,5
 
 ## Version History
 22.07.2016 - Version 0.1
-
 27.12.2016 - Version 0.2 - Fixing bugs while reading .json
-
 31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
 
 ## Questions / Issues
