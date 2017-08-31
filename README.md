@@ -39,7 +39,7 @@ If a field information is missing, the code returns None for that value.
 #### Execution
 
 You can run the code using the command:  
-*$ python TheConcertsTracker.py 'artistcode' 'artistname' 'API_KEY'
+```$ python TheConcertsTracker.py 'artistcode' 'artistname' 'API_KEY'```
 
 #### Sample Output
 ```python TheConcertsTracker.py '5441c29d-3602-4898-b1a1-b77fa23b8e50' 'David Bowie' 'API_KEY'```
