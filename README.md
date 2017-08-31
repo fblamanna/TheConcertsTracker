@@ -3,11 +3,11 @@
 
 This Python script returns a .csv file with all information about the concerts for a single band or artist, available on the [setlist.fm](http://www.setlist.fm/) website. You need to apply for a **setlist.fm API key** to download data and use them; they are free for non-commercial projects. You can get it [here](http://api.setlist.fm/docs/index.html). Please read the [API Terms of Use](http://www.setlist.fm/help/terms) carefully.
 
-## Input
+### Input
 
 The script takes as input the artist name (just for naming the output file) and the [Musicbrainz MBID](https://musicbrainz.org/doc/MusicBrainz_Database) code, which is an identifiable code for each artist or band in the database. I'm now working on an automatic call artist name - code. In the meantime you have to manually add the code available on the Musicbrainz website.
 
-## Parameters
+#### Parameters
 
 artistname = name of the artist or band (in quotation marks)  
 artistcode = Musicbrainz MBID (in quotation marks)  
@@ -53,7 +53,9 @@ bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,5
 
 ## Version History
 22.07.2016 - Version 0.1
+
 27.12.2016 - Version 0.2 - Fixing bugs while reading .json
+
 31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
 
 ## Questions / Issues
