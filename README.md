@@ -1,18 +1,21 @@
-# The Concerts Tracker
-## Get concerts information from setlist.fm database
+# The Concerts / Setlists Tracker
 
-This Python script returns a .csv file with all information about the concerts for a single band or artist, available on the [setlist.fm](http://www.setlist.fm/) website. You need to apply for a **setlist.fm API key** to download data and use them; they are free for non-commercial projects. You can get it [here](http://api.setlist.fm/docs/index.html). Please read the [API Terms of Use](http://www.setlist.fm/help/terms) carefully.
+## The Concerts Tracker
 
-### Input
+### Get concerts information from setlist.fm database
+
+***TheConcertsTracker.py*** script returns a .csv file with all information about the concerts for a single band or artist, available on the [setlist.fm](http://www.setlist.fm/) website. You need to apply for a **setlist.fm API key** to download data and use them; they are free for non-commercial projects. You can get it [here](http://api.setlist.fm/docs/index.html). Please read the [API Terms of Use](http://www.setlist.fm/help/terms) carefully.
+
+#### Input
 
 The script takes as input the artist name (just for naming the output file) and the [Musicbrainz MBID](https://musicbrainz.org/doc/MusicBrainz_Database) code, which is an identifiable code for each artist or band in the database. I'm now working on an automatic call artist name - code. In the meantime you have to manually add the code available on the Musicbrainz website.
 
-#### Input Parameters:
+##### Parameters:
 artistname: name of the artist or band (string)  
 artistcode: Musicbrainz MBID (string)  
 API_KEY: Setlist.fm valid API Key
  
-## Output
+#### Output
 
 The algorithm returns a csv file with column names, **the value separator is a semicolon ";"**. The fields are the following:
 
@@ -33,12 +36,12 @@ The algorithm returns a csv file with column names, **the value separator is a s
 
 If a field information is missing, the code returns None for that value.
 
-## Execution
+#### Execution
 
 You can run the code using the command:  
 *$ python TheConcertsTracker.py 'artistcode' 'artistname' 'API_KEY'
 
-## Sample Output
+#### Sample Output
 ```python TheConcertsTracker.py '5441c29d-3602-4898-b1a1-b77fa23b8e50' 'David Bowie' 'API_KEY'```
 
 ```
@@ -51,10 +54,18 @@ bd2d1e2,David Bowie,20-06-2004,A Reality Tour,Törnävä,2bd6d4ba,Seinäjoki,642
 bd7250e,David Bowie,11-06-2004,A Reality tour,ArenA,5bd6379c,Amsterdam,2759794,52.373,4.9,North Holland,07,Netherlands,NL
 ```
 
-## Version History
+#### Version History
 22.07.2016 - Version 0.1  
 27.12.2016 - Version 0.2 - Fixing bugs while reading .json  
 31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
+
+## The Setlists Tracker
+
+### Get information about songs played in concerts from setlist.fm database
+
+***TheSetlistsTracker.py*** script script returns a .csv file with all information about the songs played in a concert for a single band or artist, available on the [setlist.fm](http://www.setlist.fm/) website. You need to apply for a **setlist.fm API key** to download data and use them; they are free for non-commercial projects. You can get it [here](http://api.setlist.fm/docs/index.html). Please read the [API Terms of Use](http://www.setlist.fm/help/terms) carefully.
+
+***Under Construction***
 
 ## Questions / Issues
 Contacts and Info: [www.fabiolamanna.it](http://www.fabiolamanna.it)
