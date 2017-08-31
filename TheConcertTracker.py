@@ -96,7 +96,7 @@ def main():
 
 	for page in range(1,pages):
 
-		url = 'https://api.setlist.fm/rest/1.0/artist/' + sys.argv[1] + '/setlists?p=1'
+		url = 'https://api.setlist.fm/rest/1.0/artist/' + sys.argv[1] + '/setlists?p=' + str(page)
 		headers = {'Accept': 'application/json', 'x-api-key': sys.argv[3]}
 		r = requests.get(url, headers=headers)
 	
