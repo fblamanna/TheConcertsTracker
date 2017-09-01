@@ -4,7 +4,7 @@
 
 ### Get concerts information from setlist.fm database
 
-***TheConcertsTracker.py*** script returns a .csv file with all information about the concerts for a single band or artist, available on the [setlist.fm](http://www.setlist.fm/) website. You need to apply for a **setlist.fm API key** to download data and use them; they are free for non-commercial projects. You can get it [here](http://api.setlist.fm/docs/index.html). Please read the [API Terms of Use](http://www.setlist.fm/help/terms) carefully.
+***TheConcertsTracker.py*** script returns a .csv file with all information about the concerts for a single band or artist, available on the [setlist.fm](http://www.setlist.fm/) website. You need to apply for a **setlist.fm API key** to download data and use them; they are free for non-commercial projects. You can get it [here](https://api.setlist.fm/docs/1.0/index.html). Please read the [API Terms of Use](http://www.setlist.fm/help/terms) carefully.
 
 #### Input
 
