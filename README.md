@@ -45,7 +45,7 @@ You can run the code using the command:
 ```python TheConcertsTracker.py '5441c29d-3602-4898-b1a1-b77fa23b8e50' 'David Bowie' 'API_KEY'```
 
 ```
-ID,artist;eventdate;tourname;venue;venue_id;city;city_id;city_lat;city_lon;state;state_id;country;country_id
+eventID;artist;eventdate;tourname;venue;venue_id;city;city_id;city_lat;city_lon;state;state_id;country;country_id
 3bd5f8b0;David Bowie;25-06-2004;A Reality Tour;Eichenring;33d6c80d;Scheeßel;2840070;53.1666667;9.4833333;Lower Saxony;06;Germany;DE
 13d2d1e1;David Bowie;23-06-2004;A Reality Tour;T-Mobile Arena;43d62b7f;Prague;3067696;50.0878367932108;14.4241322001241;Hlavní Mesto Praha;52;Czech Republic;CZ
 bd2d1e2;David Bowie;20-06-2004;A Reality Tour;Törnävä;2bd6d4ba;Seinäjoki;642149;62.5666667;23.0666667;Western Finland;15;Finland;FI
