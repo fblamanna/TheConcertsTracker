@@ -87,7 +87,7 @@ If a field information is missing, the code returns None for that value.
 
 #### Execution
 
-You can run the code using the command:  
+The script now runs on Python 3.x only. You can run the code using the command:  
 ```$ python TheSetlistsTracker.py 'artistcode' 'artistname' 'API_KEY'```
 
 #### Sample Output
