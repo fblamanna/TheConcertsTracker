@@ -1,4 +1,3 @@
-# coding: utf8
 #
 # This Python script returns a .csv file with all information about the concerts for a single band or artist, 
 # available on the [setlist.fm](http://www.setlist.fm/) website.
@@ -28,6 +27,7 @@ __author__ = """ Fabio Lamanna (fabio@fabiolamanna.it) """
 # 22.07.2016 - Version 0.1
 # 27.12.2016 - Version 0.2 - Fixing bugs while reading .json
 # 31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
+# 26.05.2018 - Version 0.4 - Handle missing json fields - Drop Python 2 support
 #
 # Input Parameters:
 # artistname: name of the artist or band (string)  
@@ -88,8 +88,14 @@ def main():
 	# Get .json Data
 	data = r.json()
 
-	# Get total number of shows
-	totalshows = int(data['total'])
+	# Get total number of shows and handle missing shows
+	try:
+		
+		totalshows = int(data['total'])
+
+	except:
+		print('Sorry, the artist you are looking for has no concerts in the database')
+		sys.exit(1)
 
 	# Total Number of Pages needed to load
 	pages = int(totalshows/20)
@@ -108,36 +114,42 @@ def main():
 
 			for i in range(len(data['setlist'])):
 
+				# Check existence of Tour Name (other fields are mandatory or automatically created)
+				try:
+					c = data['setlist'][i]['tour']['name']
+				except KeyError:
+					c = 'None'
+
 				writer.writerow(
 				                (
 				                # Event ID
-				                str(data['setlist'][i]['id']),
+				                data['setlist'][i]['id'],
 				                # Artist
-				                str(data['setlist'][i]['artist']['name']),
+				                data['setlist'][i]['artist']['name'],
 				                # Eventdate
-				                str(data['setlist'][i]['eventDate']),
+				                data['setlist'][i]['eventDate'],
 				                # TourName
-				                unicode(data['setlist'][i]['tour']['name']).encode('utf-8'),
+				                c,
 				                # Venue
-				                unicode(data['setlist'][i]['venue'].get('name')).encode('utf-8'),
+				                data['setlist'][i]['venue'].get('name'),
 				                # Venue ID
-				                str(data['setlist'][i]['venue'].get('id')),
+				                data['setlist'][i]['venue'].get('id'),
 				                # City
-				                unicode(data['setlist'][i]['venue']['city'].get('name')).encode('utf-8'),
+				                data['setlist'][i]['venue']['city'].get('name'),
 				                # City ID
-				                str(data['setlist'][i]['venue']['city'].get('id')),
+				                data['setlist'][i]['venue']['city'].get('id'),
 				                # City Latitude
 				                float(data['setlist'][i]['venue']['city']['coords'].get('lat')),
 				                # City Longitude
 				                float(data['setlist'][i]['venue']['city']['coords'].get('long')),
 				                # State
-				                unicode(data['setlist'][i]['venue']['city'].get('state')).encode('utf-8'),
+				                data['setlist'][i]['venue']['city'].get('state'),
 				                # State Code
-				                str(data['setlist'][i]['venue']['city'].get('stateCode')),
+				                data['setlist'][i]['venue']['city'].get('stateCode'),
 				                # Country
-				                unicode(data['setlist'][i]['venue']['city']['country'].get('name')).encode('utf-8'),
+				                data['setlist'][i]['venue']['city']['country'].get('name'),
 				                # Country Code
-				                unicode(data['setlist'][i]['venue']['city']['country'].get('code')).encode('utf-8')
+				                data['setlist'][i]['venue']['city']['country'].get('code')
 				                )
 				                )
 
@@ -146,6 +158,5 @@ def main():
 if __name__ == '__main__':
 
 	main()
-
 
 

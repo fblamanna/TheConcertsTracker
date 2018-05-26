@@ -1,4 +1,3 @@
-# coding: utf8
 #
 # This Python script returns a .csv file with all information about the songs played in concerts by single bands or artists, 
 # available on the [setlist.fm](http://www.setlist.fm/) website.
@@ -28,6 +27,7 @@ __author__ = ''' Fabio Lamanna (fabio@fabiolamanna.it) '''
 # 22.07.2016 - Version 0.1
 # 27.12.2016 - Version 0.2 - Fixing bugs while reading .json
 # 31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
+# 26.05.2018 - Version 0.4 - Handle missing json fields - Drop Python 2 support
 #
 # Input Parameters:
 # artistname: name of the artist or band (string)  
@@ -76,8 +76,14 @@ def main():
 	# Get .json Data
 	data = r.json()
 
-	# Get total number of shows
-	totalshows = int(data['total'])
+	# Get total number of shows and handle missing shows
+	try:
+		
+		totalshows = int(data['total'])
+
+	except:
+		print('Sorry, the artist you are looking for has no concerts in the database')
+		sys.exit(1)
 
 	# Total Number of Pages needed to load
 	pages = int(totalshows/20)
@@ -102,7 +108,7 @@ def main():
 					writer.writerow(
 					                (
 					                # Event ID
-					                str(data['setlist'][i]['id']),
+					                data['setlist'][i]['id'],
 					                # Songs
 					                'None',
 					                # Set
@@ -128,9 +134,9 @@ def main():
 										writer.writerow(
 										                (
 										                # Event ID
-										                str(data['setlist'][i]['id']),
+										                data['setlist'][i]['id'],
 										                # Songs
-										                unicode(k['name']).encode('utf-8'),
+										                k['name'],
 										                # Set
 										                '0'
 										                )
@@ -141,9 +147,9 @@ def main():
 										writer.writerow(
 										                (
 										                # Event ID
-										                str(data['setlist'][i]['id']),
+										                data['setlist'][i]['id'],
 										                # Songs
-										                unicode(data['setlist'][i]['sets']['set']['song']['name']).encode('utf-8'),
+										                data['setlist'][i]['sets']['set']['song']['name'],
 										                # Set
 										                '0'
 										                )
@@ -154,7 +160,7 @@ def main():
 								writer.writerow(
 								                (
 								                # Event ID
-								                str(data['setlist'][i]['id']),
+								                data['setlist'][i]['id'],
 								                # Songs
 								                'None',
 								                # Set
@@ -176,11 +182,11 @@ def main():
 											writer.writerow(
 											                (
 											                # Event ID
-											                str(data['setlist'][i]['id']),
+											                data['setlist'][i]['id'],
 											                # Songs
-											                unicode(k['name']).encode('utf-8'),
+											                k['name'],
 											                # Set
-											                str(s)
+											                s
 											                )
 											                )
 
@@ -189,11 +195,11 @@ def main():
 											writer.writerow(
 											                (
 											                # Event ID
-											                str(data['setlist'][i]['id']),
+											                data['setlist'][i]['id'],
 											                # Songs
-											                unicode(data['setlist'][i]['sets']['set'][s]['song']['name']).encode('utf-8'),
+											                data['setlist'][i]['sets']['set'][s]['song']['name'],
 											                # Set
-											                str(s)
+											                s
 											                )
 											                )
 
@@ -202,7 +208,7 @@ def main():
 									writer.writerow(
 									                (
 									                # Event ID
-									                str(data['setlist'][i]['id']),
+									                data['setlist'][i]['id'],
 									                # Songs
 									                'None',
 									                # Set

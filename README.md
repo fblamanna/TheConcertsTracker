@@ -38,7 +38,7 @@ If a field information is missing, the code returns None for that value.
 
 #### Execution
 
-You can run the code using the command:  
+The script now runs on Python 3.x only. You can run the code using the command:  
 ```$ python TheConcertsTracker.py 'artistcode' 'artistname' 'API_KEY'```
 
 #### Sample Output
@@ -59,6 +59,7 @@ bd7250e;David Bowie;11-06-2004;A Reality tour;ArenA;5bd6379c;Amsterdam;2759794;5
 22.07.2016 - Version 0.1  
 27.12.2016 - Version 0.2 - Fixing bugs while reading .json  
 31.08.2017 - Version 0.3 - Adding Compatibility with Setlist.fm API 1.0
+26.05.2018 - Version 0.4 - Handle missing json fields - Drop Python 2 support
 
 ## The Setlists Tracker
 
