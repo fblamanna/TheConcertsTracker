@@ -1,4 +1,5 @@
 #
+# 
 # This Python script returns a .csv file with all information about the concerts for a single band or artist, 
 # available on the [setlist.fm](http://www.setlist.fm/) website.
 # You need to apply for a setlist.fm API key to download data and use them; they are free for non-commercial projects.
@@ -55,7 +56,7 @@ import sys
 def main():
 
 	# Set Workbooks for .csv
-	f = open(sys.argv[2] + 'ConcertsTracker.csv', 'wt')
+	f = open(sys.argv[2] + 'ConcertsTracker.csv', 'wt', encoding='utf-8')
 
 	# Inizialize .csv file
 	writer = csv.writer(f, delimiter=';')

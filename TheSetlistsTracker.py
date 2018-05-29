@@ -55,7 +55,7 @@ import sys
 def main():
 
 	# Set Workbooks for .csv
-	f = open(sys.argv[2] + 'SetlistsTracker.csv', 'wt')
+	f = open(sys.argv[2] + 'SetlistsTracker.csv', 'wt', encoding='utf-8')
 
 	# Write .csv Headers
 	writer = csv.writer(f, delimiter=';')
