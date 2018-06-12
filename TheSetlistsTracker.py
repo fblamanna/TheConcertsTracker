@@ -49,6 +49,7 @@ except:
 import requests
 import csv
 import sys
+import math
 
 #########################################################################
 
@@ -86,7 +87,7 @@ def main():
 		sys.exit(1)
 
 	# Total Number of Pages needed to load
-	pages = int(totalshows/20)
+	pages = int(math.ceil(totalshows/20))
 
 	for page in range(1,pages):
 
