@@ -116,7 +116,7 @@ eventID;song;set
 ```
 
 ## Questions / Issues
-Contacts and Info: [www.fabiolamanna.it](http://www.fabiolamanna.it)
+Contacts and Info: [www.fabiolamanna.it](https://www.fabiolamanna.it)
 
 ##
 Copyright (c) 2017 Fabio Lamanna. Code under License GPLv3.
